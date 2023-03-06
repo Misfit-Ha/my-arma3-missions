@@ -1,0 +1,176 @@
+// DO NOT EDIT (unless you know what you are doing)
+// To access the basic settings open the description.hpp in 'mission_framework\config\'
+
+#include "mission_framework\core\main\script_macros.hpp"
+
+// Importing the custom settings
+#include "mission_framework\config\description.hpp"
+__EXEC(MF_missionMaker = UID;)
+
+// Respawn settings
+respawn = "BASE";  // Respawn type
+respawnDelay = 30;  // Respawn delay in seconds (this is overwritten by the framework)
+respawnVehicleDelay = 60;  // Vehicle respawn delay in seconds (use the Vehicle respawn module instead)
+respawnDialog = 0;  // Displays the respawn dialog
+respawnButton = 1;  // If the Respawn button is enabled in the Esc menu
+respawnOnStart = -1;  // Respawn script at mission start
+
+// Mission settings
+cba_settings_hasSettingsFile = 1;  // Enable CBA settings file
+cba_settings_whitelist[] = {UID};  // Enable the CBA server settings for the mission maker + logged in admin or host
+disableChannels[] = {0, 2, 4, 5};  // Disable certain comms channels
+disabledAI = 1;  // Enable/disable AI in player slots
+enableDebugConsole[] = {UID};  // Enable the debug console for the mission maker + logged in admin or host
+enableTargetDebug = 1;  // Target debugging
+
+// Garbage collector settings
+corpseManagerMode = 1;
+corpseLimit = 1;
+corpseRemovalMinTime = 10;
+corpseRemovalMaxTime = 30;
+
+wreckManagerMode = 1;
+wreckLimit = 1;
+wreckRemovalMinTime = 30;
+wreckRemovalMaxTime = 80;
+
+// Tasks
+taskManagement_markers2D = 0;  // Use 2D markers
+taskManagement_markers3D = 0;  // Use 3D markers
+taskManagement_propagate = 0;  // Propagate shared tasks to subordinates
+
+// Admin menu
+onPauseScript[] = {QEFUNC(admin,onPause)};
+
+
+class CfgSounds
+	{
+		sounds[] = {};
+	
+	class allah
+	{
+		name = "allah"; // Display Name for editor
+		sound[] = {"sound\allah.ogg", 3, 1.0}; //Location of sound, bear in mind it will only find locations WITHIN the mission!
+		titles[]={}; //Do not use unless you know what you are doing!
+	};
+	//////////////////////////////
+	class artifire1
+	{
+		name = "artifire1";
+		sound[] = {"sound\artifire1.ogg", 2, 1};
+		titles[] = {1, ""};
+	};
+	class radiosfx {	
+		name="radiosfx";
+		sound[] = {"sound\radiosfx.ogg", 10,1};
+		titles[] = {};
+	};
+	class NEWWIND2
+	{
+		name = "NEWWIND2"; // Name for mission editor
+		sound[] = {\sound\NEWWIND2.ogg, 0.15, 1};
+		titles[] = {0, ""};
+	};
+		class AH_head1
+    {
+        name = "AH_head1";
+        sound[] = {"Sound\head1.ogg",0.7, 1,100};
+		titles[] = {};
+    };   
+	
+	class AH_hit1
+    {
+        name = "AH_hit1";
+        sound[] = {"Sound\hit1.ogg", 0.5, 1,50};
+		titles[] = {};
+    };   	
+	
+	class AH_hit2
+    {
+        name = "AH_hit2";
+        sound[] = {"Sound\hit2.ogg", 0.5, 1,50};
+		titles[] = {};
+    };	
+ 
+	class AH_kill2
+    {
+        name = "AH_kill2";
+        sound[] = {"Sound\kill2.ogg", 0.9, 1,100};
+		titles[] = {};
+    };
+class rampopen {
+		name="rampopen";
+		sound[]={sound\ServoRamp1.ogg, 2,1};
+		titles[] = {};
+	};
+	class extengine {
+		name="extengine";
+		sound[]={sound\ext_engine_hi.ogg, 3,1};
+		titles[] = {};
+	};
+	class intengine {
+		name="intengine";
+		sound[]={sound\int_engine_hi.ogg, 3,1};
+		titles[] = {};
+	};
+	class c17 {
+		name="c17";
+		sound[]={sound\c17.ogg, 2,1};
+		titles[] = {};
+	};
+	class doorwind {
+		name="doorwind";
+		sound[]={sound\dooropenwind.ogg, 3,1};
+		titles[] = {};
+	};
+	class 10secs {
+		name="10secs";
+		sound[]={sound\10secs.ogg, 3,1};
+		titles[] = {};
+	};
+	class beep {
+		name="beep";
+		sound[]={sound\beep.ogg, 0.5,1};
+		titles[] = {};
+	};
+
+
+};
+	
+
+
+
+// Debriefing config
+#include "mission_framework\core\main\CfgDebriefing.hpp"
+
+// Notifications config
+#include "mission_framework\core\main\CfgNotifications.hpp"
+
+// CBA Event handlers
+#include "mission_framework\core\main\CfgEventHandlers.hpp"
+//
+class Extended_HitPart_EventHandlers
+{
+	class CAManBase
+	{
+		class atlas_hitmarkers
+		{
+			hitPart = "_this spawn atlas_hitmarkers_fnc_onHit";
+		};
+	};
+};
+
+// RscTitles
+#include "mission_framework\core\main\rscTitles.hpp"
+
+class CfgFunctions
+{
+	#include "jebus\cfgFunctions.hpp"
+}
+
+// VCOM functions
+#ifdef VCOMAI
+    class CfgFunctions {
+        #include "mission_framework\core\vcom\CfgFunctions.hpp"
+    };
+#endif
