@@ -1,0 +1,5 @@
+
+#loop
+playsound "NEWWIND2"
+~350
+goto "loop"
