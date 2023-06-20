@@ -1,4 +1,6 @@
-
+/*
+ init server : execVM "markCustomObjs.sqf";
+*/
 private _baseClasses = ["Static","Cargo_base_F"]; //anything that is a subtype of these classes and is big enough will be marked
 private _classBlacklist = ["Land_DataTerminal_01_F","Land_SharpRock_apart","Wreck_Base","FlagCarrierCore","Base_CUP_Plant","Crater","Land_CamoNetVar_EAST","Land_HelipadCivil_F","Land_Cargo20_military_green_F","Land_CzechHedgehog_01_old_F","Land_SandbagBarricade_01_hole_F"]; //blacklist of item or parent classes to never mark
 
