@@ -1,0 +1,31 @@
+
+
+if !(isClass (configFile >> "CfgPatches" >>  "CAU_DiscordEmbedBuilder")) exitWith {diag_log text "Failed to send missionEnd webhook -- mod not loaded!"};
+if !(isDedicated) exitWith {diag_log text "Not running on TFI server -- skipping missionEnd Discord post"};
+if (count allPlayers < 4) exitWith {diag_log text "fewer than 4 players connected -- skipping missionEnd Discord post"};
+
+private [
+  "_missionDuration",
+  "_connectedPlayerCount",
+  "_playerNamesList"
+];
+
+[{time > 10}, {
+  _author = getMissionConfigValue "author";
+  _connectedPlayerCount = str(count allPlayers);
+  //player names in a comma separated list
+  _playerNames = [];
+  {
+    _playerName = name _x;
+    _playerNames pushBack _playerName;
+  } forEach allPlayers;
+  _playerNamesList = [_playerNames, ", "] call CBA_fnc_join;
+  // ["missionStartTemplate", [mission, terrain,author, numbers, players]] call DiscordEmbedBuilder_fnc_buildCfg;
+  ["missionStartTemplate", [
+    missionName,
+    worldName,
+    _author,
+    _connectedPlayerCount,
+    _playerNamesList
+  ]] call DiscordEmbedBuilder_fnc_buildCfg;
+}] call CBA_fnc_waitUntilAndExecute;
