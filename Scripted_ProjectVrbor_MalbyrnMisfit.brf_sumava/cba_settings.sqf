@@ -145,7 +145,7 @@ force ace_gforces_coef = 0.6;
 force ace_gforces_enabledFor = 2;
 
 // ACE Goggles
-ace_goggles_effects = 2;
+force ace_goggles_effects = 0;
 force ace_goggles_showClearGlasses = true;
 force ace_goggles_showInThirdPerson = false;
 

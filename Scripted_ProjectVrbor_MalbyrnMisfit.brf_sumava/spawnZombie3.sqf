@@ -6,7 +6,7 @@ selectRandom allPlayers spawn {
         playSound "screamHorde";
     }] remoteExec ["spawn", 0];
 
-    while {WBK_ZombieSpawnGroupCount > 0} do {
+    while {_zombieSpawnGroupCount > 0} do {
 
         hint "spawn hord";
         {hideBody _x;} forEach allDead;
@@ -58,7 +58,7 @@ selectRandom allPlayers spawn {
         } forEach units _grpup;
 
         waitUntil {sleep 0.5; (!(alive _un1) and !(alive _un2) and !(alive _un3) and !(alive _un4) and !(alive _un5))};
-        WBK_ZombieSpawnGroupCount = WBK_ZombieSpawnGroupCount - 1;
+        _zombieSpawnGroupCount = _zombieSpawnGroupCount - 1;
         sleep 1;
 
        

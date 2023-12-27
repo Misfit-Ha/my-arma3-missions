@@ -37,7 +37,7 @@ SCI - Scientist
 		// Uniform
 		["acp_Solid_Olive_U_O_R_Gorka_01_Solid_Olive_F",[["TFIcTab_android",1],["DSA_Antidote",1],["ACE_packingBandage",10],["ACE_splint",1],["ACE_tourniquet",1],["ACE_salineIV_500",3],["TFI_IFAK",1]]],
 		// Vest
-		["acp_Solid_Olive_V_PlateCarrier2_Solid_Olive",[["HandGrenade",1,1],["GrenadeMolotovPSRUS",1,1],["30Rnd_556x45_Stanag_Tracer_Green",10,30]]],
+		["acp_Solid_Olive_V_PlateCarrier2_Solid_Olive",[["HandGrenade",1,1],["GrenadeMolotovPSRUS",1,1],["30Rnd_556x45_Stanag_Tracer_Green",15,30]]],
 		// Backpack
 		["acp_Solid_Olive_B_Carryall_Solid_Olive",[]],
 		// Helmet

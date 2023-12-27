@@ -13,7 +13,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1089;
+		nextID=1092;
 	};
 	class MarkerIDProvider
 	{
@@ -21,14 +21,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=60;
+		nextID=68;
 	};
 	class Camera
 	{
-		pos[]={8913.4893,6.8855391,11525.266};
-		dir[]={0.95215732,-0.19353592,0.23666108};
-		up[]={0.1878425,0.98108166,0.046689134};
-		aside[]={0.2412203,-5.037291e-007,-0.97050405};
+		pos[]={8723.2012,8.392561,11789.674};
+		dir[]={0.92733985,-0.26248094,-0.26674199};
+		up[]={0.25225371,0.96493602,-0.072558671};
+		aside[]={-0.27643466,-5.9197191e-008,-0.96103418};
 	};
 };
 binarizationWanted=0;
@@ -144,13 +144,14 @@ addons[]=
 	"A3_Structures_F_Enoch_Industrial_Materials",
 	"A3_Structures_F_Exp_Civilian_Accessories",
 	"A3_Modules_F_Curator_Flares",
-	"WBK_ZombieCreatures"
+	"WBK_ZombieCreatures",
+	"A3_Supplies_F_Exp_Ammoboxes"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=74;
+		items=75;
 		class Item0
 		{
 			className="A3_Structures_F";
@@ -637,6 +638,13 @@ class AddonsMetaData
 			name="WBK_ZombieCreatures";
 			author="WebKnight";
 		};
+		class Item74
+		{
+			className="A3_Supplies_F_Exp";
+			name="Arma 3 Apex - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 class DynamicSimulation
@@ -666,11 +674,161 @@ randomSeed=624502;
 class ScenarioData
 {
 	author="Misfit";
+	respawn=3;
 	wreckRemovalMaxTime=3600;
 };
 class CustomAttributes
 {
 	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="ENH_dynamicSkill";
+			expression="if (!is3DEN && _value # 0 && isServer) then      {        _value params        [          '_enable',          '_skillMinBLUFOR',          '_skillAimMinBLUFOR',          '_skillMaxBLUFOR',          '_skillAimMaxBlUFOR',          '_skillMinOPFOR',          '_skillAimMinOPFOR',          '_skillMaxOPFOR',          '_skillAimMaxOPFOR',          '_skillMinIndependent',          '_skillAimMinIndependent',          '_skillMaxIndependent',          '_skillAimMaxIndependent'        ];        [          true,          [            [WEST, _skillMinBLUFOR, _skillAimMinBLUFOR, _skillMaxBLUFOR, _skillAimMaxBlUFOR],            [EAST, _skillMinOPFOR, _skillAimMinOPFOR, _skillMaxOPFOR, _skillAimMaxOPFOR],            [INDEPENDENT, _skillMinIndependent, _skillAimMinIndependent, _skillMaxIndependent, _skillAimMaxIndependent]          ]        ] call BIS_fnc_EXP_camp_dynamicAISkill;      }";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=13;
+						class Item0
+						{
+							class data
+							{
+								singleType="BOOL";
+								value=0;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.30000001;
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.80000001;
+							};
+						};
+						class Item4
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+						class Item5
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+						class Item6
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.30000001;
+							};
+						};
+						class Item7
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.80000001;
+							};
+						};
+						class Item8
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+						class Item9
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+						class Item10
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.30000001;
+							};
+						};
+						class Item11
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.80000001;
+							};
+						};
+						class Item12
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.5;
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Counter";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=2;
+	};
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -751,20 +909,19 @@ class Mission
 	{
 		resistanceWest=0;
 		timeOfChanges=28800;
-		startWeather=0.52965087;
-		startFog=0.32089308;
+		startWeather=0;
+		startFog=0.36324042;
 		startWind=0.66028321;
 		startWindDir=140;
 		startRain=0.34750906;
 		startLightnings=0.47055432;
 		startWaves=0.1;
-		forecastWeather=0.5717423;
+		forecastWeather=0;
 		forecastWind=0.6644994;
 		forecastWaves=0.1;
 		forecastRain=0.36021701;
 		forecastLightnings=0.45790586;
 		forecastWindDir=140;
-		rainForced=1;
 		lightningsForced=1;
 		wavesForced=1;
 		windForced=1;
@@ -775,12 +932,12 @@ class Mission
 		minute=0;
 		startFogBase=224.03845;
 		forecastFogBase=250;
-		startFogDecay=0.027616827;
+		startFogDecay=0.023055868;
 		forecastFogDecay=0.017999999;
 	};
 	class Entities
 	{
-		items=151;
+		items=154;
 		class Item0
 		{
 			dataType="Layer";
@@ -8382,7 +8539,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={9443.8711,17.694798,11019.677};
-						angles[]={-0,5.127068,0};
+						angles[]={0,5.127068,0};
 					};
 					side="Empty";
 					flags=4;
@@ -8416,7 +8573,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={9400.1436,13.112283,10948.559};
-						angles[]={0,2.4094834,-0};
+						angles[]={0,2.4094834,0};
 					};
 					side="Empty";
 					flags=4;
@@ -8467,12 +8624,13 @@ class Mission
 		class Item2
 		{
 			dataType="Marker";
-			position[]={8713.5967,4.3997364,11778.384};
-			name="BASE";
+			position[]={8713.5967,4.4000001,11778.384};
+			name="respawn";
 			text="Start";
 			type="mil_start";
 			colorName="ColorGreen";
 			id=571;
+			atlOffset=0.00026369095;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -10275,7 +10433,7 @@ class Mission
 			{
 				text="Task 2 - Activation";
 				condition="call{""t1"" call BIS_fnc_taskCompleted}";
-				onActivation="hint ""Task 2 Activation"";";
+				onActivation="";
 				sizeA=0;
 				sizeB=0;
 				timeout[]={5,5,5};
@@ -10294,7 +10452,7 @@ class Mission
 			{
 				text="Task 1 - Activation";
 				condition="call{true}";
-				onActivation="hint ""Task 1 Activation"";";
+				onActivation="";
 				sizeA=0;
 				sizeB=0;
 				timeout[]={8,8,8};
@@ -10313,7 +10471,7 @@ class Mission
 			{
 				text="Task 3 - Activation";
 				condition="call{""t2"" call BIS_fnc_taskCompleted}";
-				onActivation="hint ""Task 3 Activation"";";
+				onActivation="";
 				sizeA=0;
 				sizeB=0;
 				isServerOnly=1;
@@ -10371,7 +10529,7 @@ class Mission
 			class Attributes
 			{
 				text="Task 3 - Completion";
-				onActivation="hint ""Task 3 Completion"";";
+				onActivation="";
 				sizeA=19.921;
 				sizeB=6.8179998;
 				sizeC=10;
@@ -10434,7 +10592,7 @@ class Mission
 			{
 				text="Music 9 + Task 4 - Completion";
 				condition="call{this}";
-				onActivation="hint ""Music 9 Task 4 Completion"";" \n "" \n "call{[""Music_Tension_Loop_01""] remoteExec [""playMusic"", 0];}";
+				onActivation="" \n "" \n "call{[""Music_Tension_Loop_01""] remoteExec [""playMusic"", 0];}";
 				sizeA=27.851;
 				sizeB=32.868;
 				sizeC=10;
@@ -10495,7 +10653,7 @@ class Mission
 			{
 				text="Task 5 - Completion";
 				condition="call{!alive MF_boss}";
-				onActivation="hint ""Task 5 Completion""";
+				onActivation="";
 				sizeA=0;
 				sizeB=0;
 				timeout[]={3,3,3};
@@ -10514,7 +10672,7 @@ class Mission
 			{
 				text="Mission End + Task 6 - Completion";
 				condition="call{this}";
-				onActivation="hint ""Mission End  Task 6  Completion"";" \n "call{[""MissionSuccess"", true] call MF_end_mission_fnc_runOutro}";
+				onActivation="" \n "call{[""MissionSuccess"", true] call MF_end_mission_fnc_runOutro}";
 				sizeA=2000;
 				sizeB=1202.74;
 				timeout[]={8,10,12};
@@ -10576,7 +10734,7 @@ class Mission
 			{
 				text="Music 2 + Random TP 1 + Spawn Zombie 2";
 				condition="call{this}";
-				onActivation="hint ""Music 2 Random TP 1"";" \n "" \n "call{MF_tpLocations_1 = [""mrk_tp_1"", ""mrk_tp_2"", ""mrk_tp_3"", ""mrk_tp_4"", ""mrk_tp_5"", ""mrk_tp_6"", ""mrk_tp_7"", ""mrk_tp_8"", ""mrk_tp_18"", ""mrk_tp_19""];" \n "{" \n "  _random = selectRandom MF_tpLocations_1;" \n "  _x setPos (getMarkerPos _random);" \n "  MF_tpLocations_1 = MF_tpLocations_1 - [_random];" \n "} forEach playableUnits;" \n "" \n "[""music4""] remoteExec [""playMusic"", 0]; execVM ""spawnZombie3.sqf""; execVM ""spawnZombie4.sqf""; execVM ""spawnZombie4.sqf"";execVM ""spawnZombie4.sqf"";}";
+				onActivation="" \n "" \n "call{MF_tpLocations_1 = [""mrk_tp_1"", ""mrk_tp_2"", ""mrk_tp_3"", ""mrk_tp_4"", ""mrk_tp_5"", ""mrk_tp_6"", ""mrk_tp_7"", ""mrk_tp_8"", ""mrk_tp_18"", ""mrk_tp_19""];" \n "{" \n "  _random = selectRandom MF_tpLocations_1;" \n "  _x setPos (getMarkerPos _random);" \n "  MF_tpLocations_1 = MF_tpLocations_1 - [_random];" \n "} forEach playableUnits;" \n "" \n "[""music4""] remoteExec [""playMusic"", 0];}; execVM ""spawnZombie3.sqf""; execVM ""spawnZombie4.sqf""; execVM ""spawnZombie4.sqf"";execVM ""spawnZombie4.sqf"";";
 				sizeA=226.27299;
 				sizeB=186.196;
 				activationBy="ANYPLAYER";
@@ -10657,8 +10815,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9607.4277,10.930517,10956.357};
-				angles[]={6.1769204,0,6.249866};
+				position[]={9622,12.77516,11077};
+				angles[]={0.00048828125,0,6.2822719};
 			};
 			id=623;
 			type="ModuleLightning_F";
@@ -10682,7 +10840,7 @@ class Mission
 			class Attributes
 			{
 				text="Lightning bolt 1";
-				onActivation="hint ""bolt 1"";";
+				onActivation="";
 				sizeA=99.143997;
 				sizeB=125.054;
 				timeout[]={3,5,8};
@@ -10991,7 +11149,7 @@ class Mission
 			class Attributes
 			{
 				text="Scary sound 1";
-				onActivation="hint ""Scary sound 1"";";
+				onActivation="";
 				sizeA=2;
 				sizeB=2;
 				sizeC=2;
@@ -11010,7 +11168,7 @@ class Mission
 			class Attributes
 			{
 				text="Scary sound 2";
-				onActivation="hint ""Scary sound 2"";";
+				onActivation="";
 				sizeA=2.6170001;
 				sizeB=2.849;
 				sizeC=1.456;
@@ -11030,7 +11188,7 @@ class Mission
 			{
 				text="Car detonation";
 				condition="call{this}";
-				onActivation="" \n "hint ""Car deto"";" \n "call{MF_car_1 setDamage 1;}";
+				onActivation="" \n "" \n "call{MF_car_1 setDamage 1;}";
 				sizeA=25;
 				sizeB=25;
 				activationBy="ANYPLAYER";
@@ -11044,12 +11202,12 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9844.9717,7.2813659,11010.35};
-			angle=3.3610313;
+			angle=3.3610311;
 			class Attributes
 			{
 				text="Spawn Shadowmen 1";
 				condition="call{this}";
-				onActivation="hint ""Spawn Shadowmen 1"";" \n "" \n "call{if (isServer) then {" \n "  private _grp = createGroup civilian;" \n "  _grp createUnit [""DSA_Shadowman"", [9849.34,10995.4,4.85026], [], 0, ""CAN_COLLIDE""];" \n "};}";
+				onActivation="" \n "" \n "call{if (isServer) then {" \n "  private _grp = createGroup civilian;" \n "  _grp createUnit [""DSA_Shadowman"", [9849.34,10995.4,4.85026], [], 0, ""CAN_COLLIDE""];" \n "};}";
 				sizeA=4.4010367;
 				sizeB=3.2720001;
 				sizeC=1.808;
@@ -11720,7 +11878,7 @@ class Mission
 			{
 				text="Music 6 + Spawn Wendigo 3";
 				condition="call{this}";
-				onActivation="hint ""Music 6 Spawn Wendigo 3"";" \n "" \n "call{[] spawn {" \n "  private _grp = createGroup civilian;" \n "  MF_w_1 = _grp createUnit [""DSA_Wendigo"", [10861.2,11700.4,0], [], 0, ""NONE""];" \n "" \n "  waitUntil {!alive MF_w_1};" \n "  MF_w_2 = _grp createUnit [""DSA_Wendigo"", [10808,11523.3,0], [], 0, ""NONE""];" \n "};" \n "" \n "[""Music_Failed_Contact""] remoteExec [""playMusic"", 0];}";
+				onActivation="" \n "" \n "call{[] spawn {" \n "  private _grp = createGroup civilian;" \n "  MF_w_1 = _grp createUnit [""DSA_Wendigo"", [10861.2,11700.4,0], [], 0, ""NONE""];" \n "" \n "  waitUntil {!alive MF_w_1};" \n "  MF_w_2 = _grp createUnit [""DSA_Wendigo"", [10808,11523.3,0], [], 0, ""NONE""];" \n "};" \n "" \n "[""Music_Failed_Contact""] remoteExec [""playMusic"", 0];}";
 				sizeA=36.382;
 				sizeB=542.216;
 				activationBy="ANYPLAYER";
@@ -12102,12 +12260,12 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={11068.846,22.59613,11405.333};
-			angle=3.2276535;
+			angle=3.227653;
 			class Attributes
 			{
 				text="Spawn Wendigo 4";
 				condition="call{this}";
-				onActivation="hint ""Spawn Wendigo 4"";" \n "" \n "call{private _grp = createGroup civilian;" \n "MF_w_3 = _grp createUnit [""DSA_Wendigo"", [11033.8,11356.5,0], [], 0, ""NONE""];}";
+				onActivation="" \n "" \n "call{private _grp = createGroup civilian;" \n "MF_w_3 = _grp createUnit [""DSA_Wendigo"", [11033.8,11356.5,0], [], 0, ""NONE""];}";
 				sizeA=35.888;
 				sizeB=346.18799;
 				activationBy="ANYPLAYER";
@@ -12128,7 +12286,7 @@ class Mission
 			{
 				text="Music 7";
 				condition="call{!alive MF_w_3}";
-				onActivation="hint ""Music 7"";" \n "" \n "call{[""Music_Roaming_Night_02""] remoteExec [""playMusic"", 0];}";
+				onActivation="" \n "" \n "call{[""Music_Roaming_Night_02""] remoteExec [""playMusic"", 0];}";
 				sizeA=0;
 				sizeB=0;
 				isServerOnly=1;
@@ -12157,7 +12315,7 @@ class Mission
 			{
 				text="Music 8 + Spawn Shadowmen 2";
 				condition="call{this}";
-				onActivation="hint ""Music 8 Spawn Shadowmen 2"";" \n "" \n "call{private _grp = createGroup civilian;" \n "_grp createUnit [""DSA_Shadowman"", [11418,11196.4,3.8147e-006], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11326.5,11206.3,9.53674e-007], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11386.1,11437.3,0], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11471.2,11423,3.8147e-006], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11536,11286.8,3.8147e-006], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11529.5,11366.8,3.8147e-006], [], 0, ""CAN_COLLIDE""];" \n "" \n "[""CUP_A2EWEW_Wasteland""] remoteExec [""playMusic"", 0];}";
+				onActivation="" \n "" \n "call{private _grp = createGroup civilian;" \n "_grp createUnit [""DSA_Shadowman"", [11418,11196.4,3.8147e-006], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11326.5,11206.3,9.53674e-007], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11386.1,11437.3,0], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11471.2,11423,3.8147e-006], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11536,11286.8,3.8147e-006], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11529.5,11366.8,3.8147e-006], [], 0, ""CAN_COLLIDE""];" \n "" \n "[""CUP_A2EWEW_Wasteland""] remoteExec [""playMusic"", 0];}";
 				sizeA=175;
 				sizeB=175;
 				sizeC=20;
@@ -12259,7 +12417,7 @@ class Mission
 			{
 				text="Music 4 + Spawn Wendigo 1";
 				condition="call{this}";
-				onActivation="hint ""Music 4 Spawn Wendigo 1"";" \n "" \n "call{private _grp = createGroup civilian;" \n "MF_w_4 = _grp createUnit [""DSA_Wendigo"", [10102.7,11150.4,0], [], 0, ""NONE""];" \n "MF_w_5 = _grp createUnit [""DSA_Wendigo"", [10044.9,11453.2,0], [], 0, ""NONE""];" \n "" \n "[""music4""] remoteExec [""playMusic"", 0];}";
+				onActivation="" \n "" \n "call{private _grp = createGroup civilian;" \n "MF_w_4 = _grp createUnit [""DSA_Wendigo"", [10102.7,11150.4,0], [], 0, ""NONE""];" \n "MF_w_5 = _grp createUnit [""DSA_Wendigo"", [10044.9,11453.2,0], [], 0, ""NONE""];" \n "" \n "[""music4""] remoteExec [""playMusic"", 0];}";
 				sizeA=100.435;
 				sizeB=599.81403;
 				activationBy="ANYPLAYER";
@@ -12281,7 +12439,7 @@ class Mission
 			{
 				text="Music 5 + Spawn Wendigo 2";
 				condition="call{this}";
-				onActivation="hint ""Music 5 Spawn Wendigo 2"";" \n "" \n "call{private _grp = createGroup civilian;" \n "MF_w_6 = _grp createUnit [""DSA_Wendigo"", [10380.3,11488.3, -4.3869e-005], [], 0, ""NONE""];" \n "MF_w_7 = _grp createUnit [""DSA_Wendigo"", [10417.6,11207.5, -4.3869e-005], [], 0, ""NONE""];" \n "" \n "[""Music_Roaming_Night_Fragment_01_20s""] remoteExec [""playMusic"", 0];}";
+				onActivation="" \n "" \n "call{private _grp = createGroup civilian;" \n "MF_w_6 = _grp createUnit [""DSA_Wendigo"", [10380.3,11488.3, -4.3869e-005], [], 0, ""NONE""];" \n "MF_w_7 = _grp createUnit [""DSA_Wendigo"", [10417.6,11207.5, -4.3869e-005], [], 0, ""NONE""];" \n "" \n "[""Music_Roaming_Night_Fragment_01_20s""] remoteExec [""playMusic"", 0];}";
 				sizeA=71.990997;
 				sizeB=664.35101;
 				activationBy="ANYPLAYER";
@@ -12302,7 +12460,7 @@ class Mission
 			{
 				text="Music 1";
 				condition="call{CBA_missionTime > 5}";
-				onActivation="hint ""Music 1"";" \n "" \n "call{[""CUP_A2EWEW_Fallout""] remoteExec [""playMusic"", 0];}";
+				onActivation="" \n "" \n "call{[""CUP_A2EWEW_Fallout""] remoteExec [""playMusic"", 0];}";
 				sizeA=0;
 				sizeB=0;
 				activationBy="ANYPLAYER";
@@ -12320,7 +12478,7 @@ class Mission
 			{
 				text="Spawn Wendigo 5";
 				condition="call{this}";
-				onActivation="hint ""Spawn Wendigo 5"";" \n "" \n "call{[] spawn {" \n "  private _grp = createGroup civilian;" \n "  MF_w_8 = _grp createUnit [""DSA_Wendigo"", [11213.9,10582.4, -1.14441e-005], [], 0, ""NONE""];" \n "" \n "  waitUntil {!alive MF_w_8};" \n "  MF_w_9 = _grp createUnit [""DSA_Wendigo"", [11305.9,10534.1, -1.14441e-005], [], 0, ""NONE""];" \n "}}";
+				onActivation="" \n "" \n "call{[] spawn {" \n "  private _grp = createGroup civilian;" \n "  MF_w_8 = _grp createUnit [""DSA_Wendigo"", [11213.9,10582.4, -1.14441e-005], [], 0, ""NONE""];" \n "" \n "  waitUntil {!alive MF_w_8};" \n "  MF_w_9 = _grp createUnit [""DSA_Wendigo"", [11305.9,10534.1, -1.14441e-005], [], 0, ""NONE""];" \n "}}";
 				sizeA=125;
 				interuptable=1;
 				activationBy="ANYPLAYER";
@@ -12341,7 +12499,7 @@ class Mission
 			{
 				text="Music 10 + Spawn Shadowmen 3 + Zombie wave";
 				condition="call{this}";
-				onActivation="hint ""Music 10  Spawn Shadowmen 3"";" \n "" \n "call{private _grp = createGroup civilian;" \n "_grp createUnit [""DSA_Shadowman"", [11401.6,10628.1,4.76837e-007], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11402.4,10702.1,0], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11266.2,10747.3,4.76837e-007], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11198.4,10790.3,4.76837e-007], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11220.1,10849.8,4.76837e-007], [], 0, ""CAN_COLLIDE""];" \n "execVM ""spawnZombie3.sqf"";" \n "[""musichectic1""] remoteExec [""playMusic"", 0];}";
+				onActivation="" \n "" \n "call{private _grp = createGroup civilian;" \n "_grp createUnit [""DSA_Shadowman"", [11401.6,10628.1,4.76837e-007], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11402.4,10702.1,0], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11266.2,10747.3,4.76837e-007], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11198.4,10790.3,4.76837e-007], [], 0, ""CAN_COLLIDE""];" \n "_grp createUnit [""DSA_Shadowman"", [11220.1,10849.8,4.76837e-007], [], 0, ""CAN_COLLIDE""];" \n "execVM ""spawnZombie3.sqf"";" \n "[""musichectic1""] remoteExec [""playMusic"", 0];}";
 				sizeA=188.517;
 				sizeB=55.542999;
 				interuptable=1;
@@ -12452,12 +12610,12 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={11185.865,11.670713,10522.47};
-			angle=3.8597593;
+			angle=3.8597603;
 			class Attributes
 			{
 				text="Music 10 + Spawn Wendigo 7 + Spawn Zombie 2";
 				condition="call{this}";
-				onActivation="hint ""Music 10  Spawn Wendigo 7 Spawn Zombie 2"";" \n "" \n "call{[] spawn {" \n "  sleep 5;" \n "  private _grp = createGroup civilian;" \n "  MF_w_10 = _grp createUnit [""DSA_Wendigo"", [11177.2,10511.1,2.28882e-005], [], 0, ""NONE""];" \n "};" \n "" \n "[""Music_Failed_Contact""] remoteExec [""playMusic"", 0]; execVM ""spawnZombie.sqf""; execVM ""spawnZombie.sqf""; execVM ""spawnZombie2.sqf"";}";
+				onActivation="" \n "" \n "call{[] spawn {" \n "  sleep 5;" \n "  private _grp = createGroup civilian;" \n "  MF_w_10 = _grp createUnit [""DSA_Wendigo"", [11177.2,10511.1,2.28882e-005], [], 0, ""NONE""];" \n "};" \n "" \n "[""Music_Failed_Contact""] remoteExec [""playMusic"", 0]; }; execVM ""spawnZombie.sqf""; execVM ""spawnZombie.sqf""; execVM ""spawnZombie2.sqf"";";
 				sizeA=3.507;
 				sizeB=5.039;
 				sizeC=3;
@@ -12963,7 +13121,7 @@ class Mission
 			{
 				text="Lightning bolt 2 + Spawn Vamp";
 				condition="call{this}";
-				onActivation="hint ""Lightning bolt 2 n vamp"";" \n "" \n "call{_grp = createGroup civilian;" \n "MF_vampire = _grp createUnit [""DSA_Vampire"", [11174.6,10531.6,0.263731], [], 0, ""NONE""];}";
+				onActivation="" \n "" \n "call{_grp = createGroup civilian;" \n "MF_vampire = _grp createUnit [""DSA_Vampire"", [11174.6,10531.6,0.263731], [], 0, ""NONE""];}";
 				sizeA=2.2821844;
 				sizeB=2.3434491;
 				activationBy="ANYPLAYER";
@@ -12993,7 +13151,7 @@ class Mission
 			class Attributes
 			{
 				text="Lightning bolt 3";
-				onActivation="hint ""Lightning bolt 3"";";
+				onActivation="";
 				activationBy="ANYPLAYER";
 				isServerOnly=1;
 				triggerInterval=10;
@@ -13021,7 +13179,7 @@ class Mission
 			{
 				text="Spawn Wendigo 6";
 				condition="call{this}";
-				onActivation="hint ""Spawn Wendigo 6"";" \n "" \n "call{private _grp = createGroup civilian;" \n "MF_w_11 = _grp createUnit [""DSA_Wendigo"", [11417.3,11012.3,0], [], 0, ""NONE""];}";
+				onActivation="" \n "" \n "call{private _grp = createGroup civilian;" \n "MF_w_11 = _grp createUnit [""DSA_Wendigo"", [11417.3,11012.3,0], [], 0, ""NONE""];}";
 				interuptable=1;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
@@ -13035,12 +13193,12 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={9446.7031,18.288,11021.697};
-			angle=3.1187632;
+			angle=3.1187625;
 			class Attributes
 			{
 				text="Music 3 + Task 1 - Completion";
 				condition="call{this}";
-				onActivation="hint ""Music 3 Task 1 Completion"";" \n "" \n "call{[""CUP_A2EWEW_Wasteland""] remoteExec [""playMusic"", 0];}";
+				onActivation="" \n "" \n "call{[""CUP_A2EWEW_Wasteland""] remoteExec [""playMusic"", 0];}";
 				sizeA=3.5680001;
 				sizeB=3;
 				sizeC=1;
@@ -13172,7 +13330,7 @@ class Mission
 			class Attributes
 			{
 				text="Task 2 - Completion";
-				onActivation="hint ""Task 2 Completion"";";
+				onActivation="";
 				sizeA=2.6210001;
 				sizeB=3.2090001;
 				sizeC=1;
@@ -15653,7 +15811,7 @@ class Mission
 			class Attributes
 			{
 				text="Task 4 - Activation";
-				onActivation="hint ""Task 4 Activation"";";
+				onActivation="";
 				sizeA=4.7620001;
 				sizeB=3.6919999;
 				sizeC=2;
@@ -15675,7 +15833,7 @@ class Mission
 			class Attributes
 			{
 				text="Task 5 - Activation + Spawn Zombies 3";
-				onActivation="hint ""Task 5 Activation Spawn Zombies 1""; execVM ""spawnZombie4.sqf""; " \n "execVM ""spawnZombie4.sqf""; " \n "execVM ""spawnZombie4.sqf""; execVM ""spawnZombie4.sqf""; execVM ""spawnZombie4.sqf"";";
+				onActivation=" execVM ""spawnZombie4.sqf""; " \n "execVM ""spawnZombie4.sqf""; " \n "execVM ""spawnZombie4.sqf""; execVM ""spawnZombie4.sqf""; execVM ""spawnZombie4.sqf"";";
 				sizeA=7.1209998;
 				sizeB=7.9380002;
 				sizeC=1;
@@ -15697,7 +15855,7 @@ class Mission
 			{
 				text="Music 11 + Counter + Task 6 - Activation";
 				condition="call{!alive MF_spellbook}";
-				onActivation="hint ""Music 11 Counter Task 6 Activation"";" \n "call{[""Music_Battle_Human""] remoteExec [""playMusic"", 0];}";
+				onActivation="" \n "call{[""Music_Battle_Human""] remoteExec [""playMusic"", 0];}";
 				sizeA=0;
 				sizeB=0;
 				isServerOnly=1;
@@ -15756,7 +15914,7 @@ class Mission
 			{
 				text="Random TP 2";
 				condition="call{this}";
-				onActivation="hint ""Random TP 2"";" \n "call{MF_tpLocations_2 = [""mrk_tp_9"", ""mrk_tp_10"", ""mrk_tp_11"", ""mrk_tp_12"", ""mrk_tp_13"", ""mrk_tp_14"", ""mrk_tp_15"", ""mrk_tp_16"", ""mrk_tp_17"", ""mrk_tp_20""];" \n "{" \n "  _random = selectRandom MF_tpLocations_2;" \n "  _x setPos (getMarkerPos _random);" \n "  MF_tpLocations_2 = MF_tpLocations_2 - [_random];" \n "} forEach playableUnits;}";
+				onActivation="" \n "call{MF_tpLocations_2 = [""mrk_tp_9"", ""mrk_tp_10"", ""mrk_tp_11"", ""mrk_tp_12"", ""mrk_tp_13"", ""mrk_tp_14"", ""mrk_tp_15"", ""mrk_tp_16"", ""mrk_tp_17"", ""mrk_tp_20""];" \n "{" \n "  _random = selectRandom MF_tpLocations_2;" \n "  _x setPos (getMarkerPos _random);" \n "  MF_tpLocations_2 = MF_tpLocations_2 - [_random];" \n "} forEach playableUnits;}";
 				sizeA=200;
 				sizeB=33.683998;
 				activationBy="ANYPLAYER";
@@ -15855,7 +16013,7 @@ class Mission
 			class Attributes
 			{
 				text="Radio chatter 1";
-				onActivation="hint ""Radio chatter 1"";";
+				onActivation="";
 				sizeA=2;
 				sizeB=2;
 				sizeC=1;
@@ -15875,7 +16033,7 @@ class Mission
 			class Attributes
 			{
 				text="Radio chatter 2";
-				onActivation="hint ""Radio chatter 2"";";
+				onActivation="";
 				sizeA=4.4819999;
 				sizeB=3.9330001;
 				sizeC=2;
@@ -15897,7 +16055,7 @@ class Mission
 			{
 				text="Scary sound 3";
 				condition="call{this}";
-				onActivation="hint ""Scary sound 3"";";
+				onActivation="";
 				sizeA=3.1500001;
 				sizeB=3.5;
 				sizeC=3;
@@ -15919,7 +16077,7 @@ class Mission
 			{
 				text="Scary sound 4";
 				condition="call{!alive MF_spellbook}";
-				onActivation="hint ""Scary sound 4""";
+				onActivation="";
 				sizeA=0;
 				sizeB=0;
 				triggerInterval=10;
@@ -15971,14 +16129,14 @@ class Mission
 		class Item105
 		{
 			dataType="Trigger";
-			position[]={9526.2402,15.68,11023.439};
+			position[]={9528.8408,15.68,11038.205};
 			angle=1.5763283;
 			class Attributes
 			{
 				text="Scary sound 5";
-				onActivation="hint ""Scary sound 5"";";
-				sizeA=50.799999;
-				sizeB=43.344002;
+				onActivation="";
+				sizeA=104.15042;
+				sizeB=131.66447;
 				activationBy="ANYPLAYER";
 				isRectangle=1;
 				triggerInterval=10;
@@ -15986,7 +16144,7 @@ class Mission
 			};
 			id=718;
 			type="EmptyDetectorAreaR50";
-			atlOffset=3.1599998;
+			atlOffset=3.1364202;
 		};
 		class Item106
 		{
@@ -16225,7 +16383,7 @@ class Mission
 			class Attributes
 			{
 				text="Blinking lights ";
-				onActivation="hint ""blinking light"";" \n "" \n "" \n "nul = [] spawn{while {true} do { " \n "  light_1 hideobjectglobal true; light_2 hideobjectglobal true;" \n "  sleep 0.5; " \n "  light_1 hideobjectglobal false; light_2 hideobjectglobal false;" \n "  sleep 0.5;" \n "};};" \n "" \n "";
+				onActivation="" \n "" \n "" \n "nul = [] spawn{while {true} do { " \n "  light_1 hideobjectglobal true; light_2 hideobjectglobal true;" \n "  sleep 0.5; " \n "  light_1 hideobjectglobal false; light_2 hideobjectglobal false;" \n "  sleep 0.5;" \n "};};" \n "" \n "";
 				onDeactivation="light_1 hideobjectglobal false; light_2 hideobjectglobal false;";
 				sizeC=25;
 				activationBy="ANYPLAYER";
@@ -16242,7 +16400,7 @@ class Mission
 			class Attributes
 			{
 				text="Scary sound 7";
-				onActivation="hint ""Scary sound 7"";";
+				onActivation="";
 				sizeC=25;
 				activationBy="ANYPLAYER";
 				triggerInterval=10;
@@ -18944,7 +19102,7 @@ class Mission
 			class Attributes
 			{
 				text="Music 10 + Spawn Zombies 1";
-				onActivation="hint ""Music 10 Spawn Zombies""; " \n " " \n "execVM ""spawnZombie.sqf""; " \n "execVM ""spawnZombie.sqf""; " \n "execVM ""spawnZombie.sqf"";";
+				onActivation="" \n " " \n "execVM ""spawnZombie.sqf""; " \n "execVM ""spawnZombie.sqf""; " \n "execVM ""spawnZombie.sqf"";" \n "" \n "" \n "[""musichectic1""] remoteExec [""playMusic"", 0];";
 				sizeA=89.745003;
 				sizeB=42.848;
 				sizeC=50;
@@ -19998,6 +20156,108 @@ class Mission
 				dynamicSimulation=1;
 			};
 			id=1085;
+		};
+		class Item151
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8737.0049,4.6631255,11775.99};
+				angles[]={6.2398791,0,6.2631865};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				dynamicSimulation=1;
+			};
+			id=1089;
+			type="Box_Syndicate_Ammo_F";
+			atlOffset=5.531311e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_arsenal_attribute";
+					expression="if (!is3DEN) then {[_this, +_value] call ace_arsenal_fnc_attributeInit}";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										singleType="ARRAY";
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=1;
+									};
+								};
+							};
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item152
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8738,79,11773};
+			};
+			id=1090;
+			type="ModuleFlare_F";
+			atlOffset=74.696648;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleFlare_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="F_40mm_Red";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item153
+		{
+			dataType="Trigger";
+			position[]={8997.833,13.11037,11383.589};
+			angle=4.3399706;
+			class Attributes
+			{
+				text="Music 1 again";
+				onActivation="" \n "" \n "call{[""silentHill""] remoteExec [""playMusic"", 0];}";
+				sizeA=79.342003;
+				sizeB=170.011;
+				sizeC=20;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+				triggerInterval=5;
+				effectMusic="silentHill";
+			};
+			id=1091;
+			type="EmptyDetector";
+			atlOffset=1.2989998;
 		};
 	};
 	class Connections
