@@ -1,0 +1,15 @@
+
+
+
+[this, 10, {}, 10, false, true, true] call MF_vehicle_respawn_fnc_initVehicleRespawn;
+
+[this, "Wiesel 1"] call MF_supply_drop_fnc_addCrate;
+
+this addAction ["Spawn AI", { 
+    params ["_target", "_caller", "_actionId", "_arguments"]; 
+    _ai = "B_Soldier_F" createUnit [getPos _caller, group _caller]; 
+}];
+
+TODO test this in multi
+
+script for starting the missions

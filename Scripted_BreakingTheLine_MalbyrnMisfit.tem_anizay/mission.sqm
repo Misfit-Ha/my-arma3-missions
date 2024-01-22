@@ -21,18 +21,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=80;
+		nextID=82;
 	};
 	class Camera
 	{
-		pos[]={8423.7012,136.52251,7066.4458};
-		dir[]={-0.018758589,-0.50627971,-0.86230552};
-		up[]={-0.011012597,0.86233622,-0.50620514};
-		aside[]={-0.99986708,-1.0815202e-006,0.021758867};
+		pos[]={8376.3545,136.52251,7048.7764};
+		dir[]={-0.77632713,-0.53946525,-0.3260268};
+		up[]={-0.49738431,0.84200782,-0.20888181};
+		aside[]={-0.38720161,0,0.92199504};
 	};
 };
 binarizationWanted=0;
-sourceName="[TFI]_Misfit_BlackFishAndChips";
+sourceName="Scripted_BreakingTheLine_MalbyrnMisfit";
 addons[]=
 {
 	"A3_Props_F_Orange_Humanitarian_Camps",
@@ -43327,8 +43327,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="crate_l1_unhide";
-					expression="[_this,_value,'crate_l1_unhide'] call rhs_fnc_setHabarEden";
+					property="crate_r1_unhide";
+					expression="[_this,_value,'crate_r1_unhide'] call rhs_fnc_setHabarEden";
 					class Value
 					{
 						class data
@@ -43405,8 +43405,8 @@ class Mission
 				};
 				class Attribute6
 				{
-					property="crate_r1_unhide";
-					expression="[_this,_value,'crate_r1_unhide'] call rhs_fnc_setHabarEden";
+					property="crate_l1_unhide";
+					expression="[_this,_value,'crate_l1_unhide'] call rhs_fnc_setHabarEden";
 					class Value
 					{
 						class data
@@ -50792,14 +50792,14 @@ class Mission
 						};
 						class Attribute1
 						{
-							property="enableStamina";
-							expression="_this enablestamina _value;";
+							property="face";
+							expression="_this setface _value;";
 							class Value
 							{
 								class data
 								{
-									singleType="BOOL";
-									value=0;
+									singleType="STRING";
+									value="Default";
 								};
 							};
 						};
@@ -50844,14 +50844,14 @@ class Mission
 						};
 						class Attribute5
 						{
-							property="face";
-							expression="_this setface _value;";
+							property="enableStamina";
+							expression="_this enablestamina _value;";
 							class Value
 							{
 								class data
 								{
-									singleType="STRING";
-									value="Default";
+									singleType="BOOL";
+									value=0;
 								};
 							};
 						};
@@ -75616,6 +75616,7 @@ class Mission
 			};
 			id=1862;
 			type="rhsusf_M1232_MC_M2_usmc_d";
+			atlOffset=-3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0
