@@ -1,2 +1,0 @@
-PREP(displaySetupTimer);
-PREP(initSetupTimer);

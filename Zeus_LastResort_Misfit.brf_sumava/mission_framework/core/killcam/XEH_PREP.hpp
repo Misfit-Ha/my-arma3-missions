@@ -1,2 +1,0 @@
-PREP(initKillcam);
-PREP(toggleKillcam);
