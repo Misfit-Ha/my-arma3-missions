@@ -1,0 +1,7 @@
+
+#loop
+{playSound "NEWWIND2"} remoteExec ["call",0]
+
+
+~800
+goto "loop"
